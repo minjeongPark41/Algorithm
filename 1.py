@@ -6,3 +6,5 @@ def robs(a)
     
 def a(self, x)
     self.x + xs
+
+def python()s
