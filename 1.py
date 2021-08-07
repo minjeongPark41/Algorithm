@@ -11,3 +11,6 @@ def python()
 
 a = {"a", "b"}
     a[b] = 2s
+
+date = "2020-05-02"
+date.split("-")
