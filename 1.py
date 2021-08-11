@@ -16,3 +16,5 @@ date = "2020-05-02"
 date.split("-")
 
 mobe = [[0,1], [1,0], [0,-1]]
+
+print(mobe)
