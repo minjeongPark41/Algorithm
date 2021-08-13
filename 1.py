@@ -20,3 +20,5 @@ mobe = [[0,1], [1,0], [0,-1]]
 print(mobe)
 
 mobr[2]
+
+"very sick"
