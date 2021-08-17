@@ -139,5 +139,88 @@ def convert_int(str_number):
 -> 28
 """
 
+# ------------------------------- 함수 모듈
+
+#241 -x 
+
+# from python import datetime
+
+import datetime
+
+now = datetime.datetime.now()
+print(now)
+
+#242 - o 
+
+now = datetime.datetime.now()
+print(type(now))
+
+#243 - x 
+
+# what = datetime.timedelta()
+# print(what) # -> 0:00:00 나옴... 
+
+"""
+datetime.timedelta 모듈은 두 날짜의 차이 기간을 나타낼 때 사용하는 모듈.
+timedelta 객체에는 산술 연산자(+, -)를 사용할 수 있기 때문에 
+어떤 날짜에 특정 기간(일, 시, 분, 초)을 더하거나 뺄 수 있음
+"""
+
+now = datetime.datetime.now()
+
+for day in range(5, 0, -1): 
+    delta = datetime.timedelta(days=day) # 계산 필요한 delta를 정의
+    result = now - delta
+    print(result)
+
+#244 -x 
+
+# now = datetime.datetime.now()
+# print(now.strftime)
+
+now = datetime.datetime.now()
+print(now.strftime("%H:%M:%S"))
+
+#245 -x 
+
+# print(datetime.datetime.strptime("2020-05-04"))
+
+day = "2020-05-04"
+result = datetime.datetime.strptime(day, "%Y-%m-%d")
+print(result, type(result))
+
+# -> 2020-05-04 00:00:00 <class 'datetime.datetime'> 
+
+#246 - x
+
+import time
+import datetime
+
+while True:
+    now = datetime.datetime.now()
+    print(now)
+    time.sleep(1)
+
+# 247 - pass
+
+# 248 -x 
+
+import os
+
+result = os.getcwd()
+print(result, type(result))
+
+# 249 - 직접 해보지 않음
+
+import os
+os.rename("C:/Users/hyunh/Desktop/before.txt", "C:/Users/hyunh/Desktop/after.txt")
+
+# 250 - x
+
+import numpy
+
+for i in numpy.arange(0, 5, 0.1):
+    print(i)
+
 
 
