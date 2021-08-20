@@ -420,15 +420,121 @@ class Account:
     def get_account_num(self):
         print(Account.account_count)
 
+    # 😶출력 결과는 같게 나오긴하는데... 언제 cls를 쓸까 
+
+    @classmethod
+    def get_account_num(cls):
+        print(cls.account_count) 
+
+#274 - x
+
+class Account:
+    
+    account_count = 0 
+
+    def __init__(self, name, 초기잔액):
+        self.name = name
+        self.초기잔액 = 초기잔액
+        self.banck = "sc은행"
+
+        num1 = random.randint(0,999)
+        num2 = random.randint(0,99)
+        num3 = random.randint(0, 999999)
+
+        num1 = str(num1)
+        num2 = str(num2)
+        num3 = str(num3)
+
+        self.account = num1 + '-' + num2 + '-' +num3
+
+        Account.account_count +=1
+
+    @classmethod
+    def get_account_num(cls):
+        print(cls.account_count)
+
+    def deposit(self, 입금):
+        if 입금 >= 1:
+            self.초기잔액 +=입금
+
+#275 - x 
+
+class Account:
+    
+    account_count = 0 
+
+    def __init__(self, name, 초기잔액):
+        self.name = name
+        self.초기잔액 = 초기잔액
+        self.banck = "sc은행"
+
+        num1 = random.randint(0,999)
+        num2 = random.randint(0,99)
+        num3 = random.randint(0, 999999)
+
+        num1 = str(num1)
+        num2 = str(num2)
+        num3 = str(num3)
+
+        self.account = num1 + '-' + num2 + '-' +num3
+
+        Account.account_count +=1
+
+    @classmethod
+    def get_account_num(cls):
+        print(cls.account_count)
+
+    def deposit(self, 입금):
+        if 입금 >= 1:
+            self.초기잔액 +=입금
+
+    def withdraw(self, 출금):
+        if 출금 < self.초기잔액:
+            self.초기잔액 -=출금
+
+    # 😶 withdraw 함수에서는 self가 붙었다는점 
 
 
-#274
+#276 - x 
 
+class Account:
+    
+    account_count = 0 
 
-#275
+    def __init__(self, name, 초기잔액):
+        self.name = name
+        self.초기잔액 = 초기잔액
+        self.bank = "sc은행"
 
+        num1 = random.randint(0,999)
+        num2 = random.randint(0,99)
+        num3 = random.randint(0, 999999)
 
-#276
+        num1 = str(num1)
+        num2 = str(num2)
+        num3 = str(num3)
+
+        self.account = num1 + '-' + num2 + '-' +num3
+
+        Account.account_count +=1
+
+    @classmethod
+    def get_account_num(cls):
+        print(cls.account_count)
+
+    def deposit(self, 입금):
+        if 입금 >= 1:
+            self.초기잔액 +=입금
+
+    def withdraw(self, 출금):
+        if 출금 < self.초기잔액:
+            self.초기잔액 -=출금
+
+    def display_info(self):
+        print("은행이름:", self.bank)
+        print("예금주:", self.name)
+        print("계좌번호:", self.account)
+        print("잔고:", self.초기잔액)
 
 
 #277
