@@ -534,17 +534,244 @@ class Account:
         print("은행이름:", self.bank)
         print("예금주:", self.name)
         print("계좌번호:", self.account)
-        print("잔고:", self.초기잔액)
+        print("잔고:", format(self.초기잔액, ','))
 
 
-#277
+"""
+cf) 1000단위마다 콤마 넣는법
+number =  12345
+number =  format(number, ',')
+
+"""
+
+#277 - x 
+
+class Account:
+    
+    account_count = 0 
+
+    def __init__(self, name, 초기잔액):
+
+        self.deposit_count = 0 # 😶 왜 여기다가 두지? 
+
+        self.name = name
+        self.초기잔액 = 초기잔액
+        self.bank = "sc은행"
+
+        num1 = random.randint(0,999)
+        num2 = random.randint(0,99)
+        num3 = random.randint(0, 999999)
+
+        num1 = str(num1)
+        num2 = str(num2)
+        num3 = str(num3)
+
+        self.account = num1 + '-' + num2 + '-' +num3
+
+        Account.account_count +=1
+
+        # if Account.account_count == 5:
+        #     self.초기잔액 = self.초기잔액*1.1
+
+    @classmethod
+    def get_account_num(cls):
+        print(cls.account_count)
+
+    def deposit(self, 입금):
+        if 입금 >= 1:
+            self.초기잔액 +=입금
+
+            self.deposit_count +=1
+            if self.deposit_count % 5 == 0:
+                self.초기잔액 = (self.초기잔액*1.01)
+
+    def withdraw(self, 출금):
+        if 출금 < self.초기잔액:
+            self.초기잔액 -=출금
+
+    def display_info(self):
+        print("은행이름:", self.bank)
+        print("예금주:", self.name)
+        print("계좌번호:", self.account)
+        print("잔고:", format(self.초기잔액, ','))
+
+#278 - o
+
+list = []
+
+박 = Account("박", 1000)
+석 = Account("석", 2000)
+김 = Account("김", 3000)
+
+list.append(박)
+list.append(석)
+list.append(김)
 
 
-#278
+#279 - x 
 
+for i in list:
+    if i.초기잔액 > 1000000:
+        # print(i.name)
+        i.display_infor()
 
-#279
+#280 - pass 
 
+#281 - o
 
-#280
+class 차:
+    def __init__(self, 바퀴, 가격):
+        self.바퀴 = 바퀴
+        self.가격 = 가격
 
+#282 - x
+
+# class 자전차(class 차):
+
+class 자전차(차):
+    pass
+
+#283 - x 
+
+class 자전차(차):
+    def __init__ (self, 바퀴, 가격):
+        self.바퀴 = 바퀴
+        self.가격 = 가격
+
+#284 - o 
+
+class 자전차(차):
+    def __init__ (self, 바퀴, 가격, 구동계):
+        # self.바퀴 = 바퀴
+        # self.가격 = 가격
+        super().__init__(바퀴, 가격)
+        self.구동계 = 구동계
+
+bicycle = 자전차(2, 100, "시마노")
+bicycle.구동계
+
+#285 - x 
+
+class 차:
+    def __init__(self, 바퀴, 가격):
+        self.바퀴 = 바퀴
+        self.가격 = 가격
+
+class 자동차(차):
+    def __init (self, 바퀴, 가격):
+        super().__init__(바퀴, 가격)
+
+    # def 정보(self, 바퀴, 가격):
+    #     print("바퀴수", 바퀴)
+    #     print("가격", 가격)
+
+    #😶
+    def 정보(self):
+        print("바퀴수:", self.바퀴)
+        print("가격", self.가격)
+
+#286 - pass
+
+#287 - pass 
+
+#288 - pass 
+ 
+#289 - pass 
+
+#290 - pass 
+
+#291 - pass ( 파일 쓰기 )
+
+#292 - pass ( 파일 쓰기 ) 
+
+#293 - pass ( 파일 쓰기 )
+
+#294 - pass ( 파일 읽기 )
+
+#295 - pass ( 파일 읽기 )
+
+#296 - x 
+
+per = ["10.31", "", "8.00"]
+
+for i in per:
+    try:
+        print(float(i))
+    except:
+        print(0)
+
+#297 - x 
+
+per = ["10.31", "", "8.00"]
+
+# list = []
+
+# for i in per:
+#     float(i)
+#     list.append(i)
+
+list = [] 
+
+for i in per:
+    try:
+        i = float(i)
+    except:
+        i = 0 
+    list.append(i)
+
+print(list)
+
+#298 - x
+
+try:
+    a = 3/0
+except ZeroDivisionError:
+    print("0으로 나누면 안됩니다.")
+
+#299 - x 
+
+data = [1, 2, 3]
+
+# try:
+#     for i in range(5):
+# except:
+#     print("올바른 범위가 아닙니다.")
+
+for i in range(5):
+    try:
+        print(data[i])
+    except IndexError as e:
+        print(e)
+        # 3,4 는 list index out of range
+
+"""
+try:
+    실행코드
+except 예외 as 변수:
+    예외처리코드 
+"""
+
+#300
+
+"""
+try:
+    실행 코드
+except:
+    예외가 발생했을 때 수행할 코드
+else:
+    예외가 발생하지 않았을 때 수행할 코드
+finally:
+    예외 발생 여부와 상관없이 항상 수행할 코드
+"""
+
+per = ["10.31", "", "8.00"]
+
+for i in per:
+    try:
+        print(float(per))
+    except:
+        print(0)
+    else:
+        "예외 없음"
+    finally:
+        "항상 수행"
