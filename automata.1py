@@ -5,3 +5,6 @@ print(a+b)
 #1011
 
 print("automata")
+
+house =[]
+chicken = []
